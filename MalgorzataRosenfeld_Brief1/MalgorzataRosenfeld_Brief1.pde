@@ -9,14 +9,17 @@ Circle  class  to  model  them  (but  it's  not  compulsory)
 • All  circles  can  be  moved  (as  a  group)  using  the  up/down/left/right  arrow  
 keys. */ 
 Circle myCircle;
+Face myFace;
 
 void setup(){
   size(700, 700);
   background(155);
   
   myCircle = new Circle();
+  myFace = new Face();
 }
 
 void draw() {
     myCircle.paint();
+    myFace.paint(500, 500);
 }
