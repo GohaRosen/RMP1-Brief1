@@ -2,17 +2,17 @@ class Circle{
   float xPos;
   float yPos;
   float cWidth;
-  int cRed;
-  int cGreen;
-  int cBlue;
+  float cRed;
+  float cGreen;
+  float cBlue;
   
   Circle(){
-    xPos = 50;
-    yPos = 50;
-    cWidth = 20;
-    cRed = 255;
-    cGreen = 0;
-    cBlue = 0;
+    xPos = random(50,600);
+    yPos = random(50,600);
+    cWidth = random(10,50);
+    cRed = random(0,255);
+    cGreen = random(0,255);
+    cBlue = random(0,255);
   }
   
     void paint() {

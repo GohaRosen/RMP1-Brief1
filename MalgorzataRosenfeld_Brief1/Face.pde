@@ -13,8 +13,11 @@ class Face{
     fill(46, 139, 87);
     ellipse(0, 0, 100, 100);
     fill(0);
-    triangle(10, 20, 40 , 20, 25, 35); 
-    triangle(60, 20, 90 , 20, 75, 35); 
+    triangle(-20, -30, -10 , -30, -15, -20); 
+    triangle(20, -30, 10 , -30, 15, -20); 
+    arc(-20,2,30,20,QUARTER_PI, PI+QUARTER_PI);
+    ellipse(0, -10, 5, 5);
+    
     
     popMatrix();
   }
