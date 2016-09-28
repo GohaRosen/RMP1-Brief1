@@ -1,3 +1,4 @@
+//set up class and its attributes 
 class Circle{
   float xPos;
   float yPos;
@@ -6,6 +7,7 @@ class Circle{
   float cGreen;
   float cBlue;
   
+  //set up circle position, radies and colour
   Circle(){
     xPos = random(50,600);
     yPos = random(50,600);
@@ -15,9 +17,11 @@ class Circle{
     cBlue = random(0,255);
   }
   
+  //set up paint function 
     void paint() {
     fill(cRed, cGreen, cBlue);
     ellipse(xPos, yPos, cWidth, cWidth);
+    noStroke();
     noFill();
   }
 }

@@ -25,13 +25,7 @@ void setup(){
   {
     allCircles[i] = new Circle();
   }
- 
- 
-  
   myFace = new Face(); 
-
- 
-  
 }
 
 
@@ -39,12 +33,30 @@ void draw() {
     background(155); //set background colour to make sure I only have one face at a time 
     
      for(int c=0; c<20; c++){
-       
        allCircles[c].paint();
-     
-     }
-    
-   
+      }
+      
     myFace.paint(mouseX, mouseY); //tie down the face to mouse coordinates
+    
+      if(keyCode == UP ){
+        for(int p=0; p<20; p++){
+          allCircles[p].yPos -= 1;
+        }
+      }
+      if(keyCode == DOWN ){
+        for(int p=0; p<20; p++){
+          allCircles[p].yPos += 1;
+        }
+      }
+      if(keyCode == LEFT ){
+        for(int p=0; p<20; p++){
+          allCircles[p].xPos -= 1;
+        }
+      }
+      if(keyCode == RIGHT ){
+        for(int p=0; p<20; p++){
+          allCircles[p].xPos += 1;
+        }
+      }
  
 }
