@@ -8,13 +8,16 @@ import ddf.minim.*;   //import library so I can play a sound
 
 Minim minim; //loading the class
 AudioPlayer sound;  //instance of my player
+AudioPlayer click; //instance of my player
 
 
 void setup(){
   size(700, 700); //size of the screen
   background(155);  //set up background colour
-  minim = new Minim(this);
+  minim = new Minim(this); //this will load the files from data folder
   sound = minim.loadFile("Bubbles.mp3");  //assigning a file to my player (loading mp3)
+  click = minim.loadFile("alert.mp3");    //assigning a file to my player (loading mp3)
+  
   
   for (int i = 0; i < 20; i++)  //loop through the array and create space for 20 new circles 
   {
@@ -37,25 +40,34 @@ void draw() {
         for(int p=0; p<20; p++){
           allCircles[p].yPos -= 1;
         }
-        sound.loop();  //play the sound
+        sound.rewind();  //set the mp3 to the beginning so it can play
+        sound.play();  //play the sound
       }
       if(keyCode == DOWN && keyPressed == true){     //move all 20 circles down
         for(int p=0; p<20; p++){
           allCircles[p].yPos += 1;
         }
-        sound.loop();    //play the sound
+        sound.rewind();  //set the mp3 to the beginning so it can play
+        sound.play();  //play the sound
       }
       if(keyCode == LEFT && keyPressed == true){       //move all 20 circles left
         for(int p=0; p<20; p++){
           allCircles[p].xPos -= 1;
         }
-        sound.loop();    //play the sound
+        sound.rewind();  //set the mp3 to the beginning so it can play
+        sound.play();  //play the sound
       }
       if(keyCode == RIGHT && keyPressed == true){      //move all 20 circles right
         for(int p=0; p<20; p++){
           allCircles[p].xPos += 1;
         }
-        sound.loop();    //play the sound
+        sound.rewind();  //set the mp3 to the beginning so it can play
+        sound.play();  //play the sound
       }
  
+}
+
+void mousePressed(){
+   click.rewind();  //set the mp3 to the beginning so it can play
+   click.play();  //play the sound
 }
