@@ -1,15 +1,12 @@
-//Initialise  face
-Face myFace;
+Face myFace;   //Initialise  face
 
-//create array to store all my circles in
-Circle[] allCircles = new Circle[20];
+Circle[] allCircles = new Circle[20];  //create array to store all my circles in
 
 import ddf.minim.*;   //import library so I can play a sound
 
 Minim minim; //loading the class
 AudioPlayer sound;  //instance of my player
 AudioPlayer click; //instance of my player
-
 
 void setup(){
   size(700, 700); //size of the screen
@@ -34,37 +31,36 @@ void draw() {
        allCircles[c].paint();
       }
       
-    myFace.paint(mouseX, mouseY); //tie down the face to mouse coordinates
+     myFace.paint(mouseX, mouseY); //tie down the face to mouse coordinates
     
       if(keyCode == UP && keyPressed == true){     //move all 20 circles up
+        sound.rewind(); //set the play head to the begining
+        sound.play();   //play (play just once)
         for(int p=0; p<20; p++){
           allCircles[p].yPos -= 1;
         }
-        sound.rewind();  //set the mp3 to the beginning so it can play
-        sound.play();  //play the sound
       }
       if(keyCode == DOWN && keyPressed == true){     //move all 20 circles down
+        sound.rewind(); //set the play head to the begining
+        sound.play();   //play (play just once)
         for(int p=0; p<20; p++){
           allCircles[p].yPos += 1;
         }
-        sound.rewind();  //set the mp3 to the beginning so it can play
-        sound.play();  //play the sound
       }
       if(keyCode == LEFT && keyPressed == true){       //move all 20 circles left
+        sound.rewind(); //set the play head to the begining
+        sound.play();   //play (play just once)
         for(int p=0; p<20; p++){
           allCircles[p].xPos -= 1;
         }
-        sound.rewind();  //set the mp3 to the beginning so it can play
-        sound.play();  //play the sound
       }
       if(keyCode == RIGHT && keyPressed == true){      //move all 20 circles right
+        sound.rewind(); //set the play head to the begining
+        sound.play();   //play (play just once)
         for(int p=0; p<20; p++){
           allCircles[p].xPos += 1;
         }
-        sound.rewind();  //set the mp3 to the beginning so it can play
-        sound.play();  //play the sound
       }
- 
 }
 
 void mousePressed(){
